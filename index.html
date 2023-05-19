@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafePal</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #ff4444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .content {
+      width: 600px;
+      height: 435px;
+      border-radius: 14px;
+      background: #fff;
+      padding: 0 60px;
+    }
+    .h3 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .backTo {
+      padding: 7px 17px;
+      width: 156px;
+      height: 34px;
+      line-height: 34px;
+      background: #4a21ef;
+      border-radius: 100px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+    .backTo {
+      color: #fff;
+    }
+    #continueBtn {
+      text-decoration: underline;
+    }
+  </style>
+  <body>
+    <div class="content">
+      <div style="margin-top: 60px">
+        <img
+          width="60"
+          src="data:image/png;base64,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"
+        />
+      </div>
+      <div style="margin-top: 20px" class="h3">
+        You are about to visit a scam site!
+      </div>
+      <div style="margin-top: 10px">
+        This domain is currently on the SafePal domain warning list. Based on
+        the information we have, SafePal believes this domain could compromise
+        your wallet security, thus we have restricted the access to this site.
+      </div>
+      <div style="margin-top: 12px">
+        <a class="backTo" href="https://www.safepal.com/"
+          >Back to secure site</a
+        >
+      </div>
+      <div style="margin-top: 12px">
+        If you understand the risks and still want to proceed, you can
+        <a id="continueBtn">continue to the site</a>.
+      </div>
+      <div style="margin-top: 30px; text-align: center; opacity: 0.6">
+        <img
+          width="90"
+          src="data:image/png;base64,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"
+        />
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  const getQueryString = (name) => {
+    const search = location.search;
+    const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    const r = search.substr(1).match(reg);
+    if (r != null) {
+      return decodeURIComponent(r[2]);
+    }
+    return null;
+  };
+
+  const hrefStr = decodeURI(getQueryString('href'));
+  const hostnameStr = decodeURI(getQueryString('hostname'));
+  const continueBtn = document.getElementById('continueBtn');
+  continueBtn.onclick = async () => {
+    const res = await window.safepalProvider.setPassRiskUrls(hostnameStr);
+    location.replace(hrefStr);
+  };
+</script>
