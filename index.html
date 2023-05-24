@@ -133,8 +133,8 @@
     return '';
   };
 
-  const hrefStr = encodeURIComponent(getQueryString('href'));
-  const hostnameStr = encodeURIComponent(getQueryString('hostname'));
+  const hrefStr = getQueryString('href')
+  const hostnameStr = getQueryString('hostname')
   const continueBtn = document.getElementById('continueBtn');
   continueBtn.onclick = async () => {
     if (hostnameStr) {
